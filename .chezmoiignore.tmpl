@@ -1,0 +1,6 @@
+{{- /* Ignore zsh configs on non-macOS (e.g., servers) */ -}}
+{{- if ne .chezmoi.os "darwin" -}}
+dot_zshrc
+dot_p10k.zsh
+{{- end -}}
+
