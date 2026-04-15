@@ -54,10 +54,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(starship init zsh)"
 alias ssh="TERM=xterm-256color ssh"
+alias cat='bat'
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
-    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
         builtin cd -- "$cwd"
     fi
     rm -f -- "$tmp"
