@@ -18,8 +18,17 @@ HIST_STAMPS="mm/dd/yyyy"
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+if [ -f /opt/homebrew/share/fzf-tab/fzf-tab.zsh ]; then
+    source /opt/homebrew/share/fzf-tab/fzf-tab.zsh
+    zstyle ':fzf-tab:*' switch-group ',' '.'
+fi
+
 #Brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+if command -v fzf >/dev/null 2>&1; then
+    source "$(brew --prefix fzf)/shell/completion.zsh"
+    source "$(brew --prefix fzf)/shell/key-bindings.zsh"
+fi
 source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.8.0/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # >>> conda initialize >>>

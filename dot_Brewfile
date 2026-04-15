@@ -20,6 +20,8 @@ brew "gcc"
 brew "fftw"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Replace zsh completion selection menu with fzf
+brew "fzf-tab"
 # C++ mathematics library for graphics software
 brew "glm"
 # Improved top (interactive process viewer)
