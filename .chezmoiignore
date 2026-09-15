@@ -1,0 +1,9 @@
+{{- /* macOS-only files: skip on Linux and other non-macOS machines (e.g., servers, robots) */ -}}
+{{- /* Note: patterns are target paths (.zshrc), not source names (dot_zshrc) */ -}}
+{{ if ne .chezmoi.os "darwin" }}
+.zshrc
+.p10k.zsh
+.Brewfile
+.config/ghostty
+.config/ghostty/**
+{{ end }}
